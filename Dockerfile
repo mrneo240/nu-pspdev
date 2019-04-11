@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 MAINTAINER HaydenKow <hayden@hkowsoftware.com>
 
-ENV TOOLCHAIN_VERSION 3a6e1a250aa385dbfd32095ec8bf0b8d9191c93d
+ENV TOOLCHAIN_VERSION 76714aed9e3add5a0d73fee665716809909e3be9
 
 ENV PSPDEV /pspdev
 ENV PSPSDK $PSPDEV/pspsdk
@@ -39,7 +39,7 @@ RUN apt-get update \
         wget \
     && echo "dash dash/sh boolean false" | debconf-set-selections \
     && dpkg-reconfigure --frontend=noninteractive dash \
-    && git clone https://github.com/top-sekret/psptoolchain.git /toolchain \
+    && git clone https://github.com/mrneo240/psptoolchain.git /toolchain \
     && cd /toolchain \
     && git checkout -qf $TOOLCHAIN_VERSION \
     && mkdir -p /pspdev \
