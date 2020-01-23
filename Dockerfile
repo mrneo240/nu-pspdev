@@ -5,7 +5,7 @@ MAINTAINER HaydenKow <hayden@hkowsoftware.com>
 ENV TOOLCHAIN_VERSION eee7a1d20743ec67a995b843d35e07d53bedc07a
 
 ENV PSPDEV /pspdev
-ENV PSPSDK $PSPDEV/pspsdk
+ENV PSPSDK $PSPDEV/psp/sdk
 ENV PATH   $PATH:$PSPDEV/bin:$PSPSDK/bin
 
 ENV DEBIAN_FRONTEND noninteractive
@@ -33,6 +33,7 @@ RUN apt-get update \
         zlib1g-dev \
         libtool \
         subversion \
+        meson \
         git \
         tcl \
         unzip \
