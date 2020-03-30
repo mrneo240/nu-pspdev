@@ -10,6 +10,7 @@ ENV PATH   $PATH:$PSPDEV/bin:$PSPSDK/bin
 
 ENV DEBIAN_FRONTEND noninteractive
 
+RUN useradd dev
 RUN apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y \
@@ -51,5 +52,6 @@ RUN apt-get update \
         /toolchain \
         /var/lib/apt/lists/*
 
+USER dev
 WORKDIR /src
 CMD ["/bin/bash"]
